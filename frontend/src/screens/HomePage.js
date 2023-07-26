@@ -13,8 +13,6 @@ function HomePage() {
     
 
 
-
-
     const sliderRef = useRef(null)
 
     const onMouseDown = (e) => {
@@ -39,6 +37,28 @@ function HomePage() {
     const burgerToggle = () => {
         setBurgerMenu((state) => !state)
         burgerMenu ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'clip'
+    }
+
+    function debounce(fn, delay) {
+        // Таймер, который будет контролировать, когда мы можем вызвать функцию fn
+        let timerId;
+    
+        // Возвращаем новую функцию
+        return function (...args) {
+            // Если мы уже нажали кнопку (и таймер запущен), останавливаем таймер
+            if (timerId) {
+                clearTimeout(timerId);
+            }
+    
+            // Запускаем новый таймер
+            timerId = setTimeout(() => {
+                // Когда время таймера истекает, вызываем нашу функцию fn
+                fn(...args);
+                
+                // Обнуляем таймер
+                timerId = null;
+            }, delay);
+        }
     }
 
 

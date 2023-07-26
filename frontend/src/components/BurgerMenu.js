@@ -5,6 +5,7 @@ function BurgerMenu() {
     
   return (
     <div className='burger-menu'>
+        <div className="burger-wrapper">
         <div className="menu-topics">
             <div className="menu-topics-wrapper">
                 <ul className="headers-topic">
@@ -44,6 +45,7 @@ function BurgerMenu() {
                 <a href='/' className="menu-footer-link"><img src="static/icons/letter-white.svg" alt="" /></a>
                 <a href='/' className="menu-footer-link"><img src="static/icons/mark-white.svg" alt="" /></a>
             </div>
+        </div>
         </div>
     </div>
   )
